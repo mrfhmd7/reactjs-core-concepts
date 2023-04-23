@@ -14,31 +14,38 @@ const singerStyle = {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>JSX</h1>
-        <div className="container">
-          <h3>Hello Dude, React. How are you?</h3>
-        </div>
-        <div className="music">
-          <p>Number: {4321 + number}</p>
-          <p style={singerStyle}>Name: {singer.name} {singer.job}</p>
-          <p style={{ color: 'black', backgroundColor: 'powderblue' }}>Name: {singer2.name} {singer2.job}</p>
-        </div>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <div className="music">
+        <p>Number: {4321 + number}</p>
+        <p style={singerStyle}>Name: {singer.name} {singer.job}</p>
+        <p style={{ color: 'black', backgroundColor: 'powderblue' }}>Name: {singer2.name} {singer2.job}</p>
+      </div> */}
+      <Person name='Salman Shah' nayika='Sabnur'></Person>
+      <Person name='Rebel' nayika='Moushumi'></Person>
+      <Person name='Bappa Raz' nayika='ChekaKhay'></Person>
+      <h3>Here new component !!!</h3>
+      <Friend name='Sobuj' address='Tangail' phone='017********'></Friend>
+      <Friend name='Ashik' address='Pabna' phone='018********'></Friend>
     </div>
   );
-}
+};
+
+function Person(props) {
+  return (
+    <div className='person'>
+      <h1>Nayok: {props.name}</h1>
+      <h3>Nayika: {props.nayika}</h3>
+    </div>
+  );
+};
+
+function Friend(props) {
+  return (
+    <div className='container'>
+      <h2>Name: {props.name}</h2>
+      <h5>Address: {props.address}</h5>
+      <p>Phone: {props.phone}</p>
+    </div>
+  );
+};
 
 export default App;
